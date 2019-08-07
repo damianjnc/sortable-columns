@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { TableWrapper, TdWrapper, ThWrapper } from "./styled";
 
 const Table = () => {
 
@@ -19,8 +20,8 @@ const Table = () => {
         const direction = sorting.column ? (sorting.direction === 'asc' ? 'desc' : 'asc') : 'desc';
         const sortedData = data.sort((a, b) => {
             if (column === 'name') {
-                const nameA = a.name.toUpperCase(); // ignore upper and lowercase
-                const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+                const nameA = a.name.toUpperCase();
+                const nameB = b.name.toUpperCase();
                 if (nameA < nameB) {
                     return -1;
                 }
@@ -46,24 +47,24 @@ const Table = () => {
     };
 
         return (
-            <table>
+            <TableWrapper>
                 <thead>
                 <tr>
-                    <th onClick={() => onSort('name')}>Name</th>
-                    <th onClick={() => onSort('prefix')}>Prefix</th>
+                    <ThWrapper onClick={() => onSort('name')}>Name</ThWrapper>
+                    <ThWrapper onClick={() => onSort('prefix')}>Prefix</ThWrapper>
                 </tr>
                 </thead>
                 <tbody>
                 {data.map(function(item, index) {
                     return (
                         <tr key={index} data-item={item}>
-                            <td data-title="Name">{item.name}</td>
-                            <td data-title="Prefix">{item.prefix}</td>
+                            <TdWrapper data-title="Name">{item.name}</TdWrapper>
+                            <TdWrapper data-title="Prefix">{item.prefix}</TdWrapper>
                         </tr>
                     );
                 })}
                 </tbody>
-            </table>
+            </TableWrapper>
         );
 }
 
