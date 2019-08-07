@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const Table3 = () => {
+const Table = () => {
 
     const [data, setData] = useState( [
         {name: 'Poland', prefix: 48},
@@ -49,13 +49,12 @@ const Table3 = () => {
             <table>
                 <thead>
                 <tr>
-                    <th onClick={e => onSort('name', e)}>Name</th>
-                    <th onClick={e => onSort('prefix', e)}>Prefix</th>
+                    <th onClick={() => onSort('name')}>Name</th>
+                    <th onClick={() => onSort('prefix')}>Prefix</th>
                 </tr>
                 </thead>
                 <tbody>
                 {data.map(function(item, index) {
-                    console.log(index)
                     return (
                         <tr key={index} data-item={item}>
                             <td data-title="Name">{item.name}</td>
@@ -68,4 +67,4 @@ const Table3 = () => {
         );
 }
 
-export default Table3;
+export default Table;
