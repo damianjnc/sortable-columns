@@ -11,10 +11,10 @@ const Table = () => {
         {name: 'Italy', prefix: 39}
     ]);
 
-    const [sorting, setSorting] = useState({ sorting: {
+    const [sorting, setSorting] = useState({
             column: null,
             direction: 'desc',
-        }});
+        });
 
     const onSort = column  => {
         const direction = sorting.column ? (sorting.direction === 'asc' ? 'desc' : 'asc') : 'desc';
