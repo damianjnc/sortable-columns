@@ -1,20 +1,44 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { phoneCodes } from './data/phoneCodes';
+
 import { TableWrapper, TdWrapper, ThWrapper } from "./styled";
+
+
 
 const Table = () => {
 
-    const [data, setData] = useState( [
-        {name: 'Poland', prefix: 48},
-        {name: 'Mexico', prefix: 52},
-        {name: 'UK', prefix: 44},
-        {name: 'US', prefix: 1},
-        {name: 'Italy', prefix: 39}
-    ]);
+    const [data, setData] = useState( []);
 
     const [sorting, setSorting] = useState({
             column: null,
             direction: 'desc',
         });
+
+    useEffect( ()=>  {
+/*        axios.get('https://country.io/phone.json')
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
+          //  gives CORS error, can't change to https
+            */
+
+            phoneCodes().then(
+                res =>{
+                    const loadedCodes = [];
+                    for(let el of res){
+                        loadedCodes.push({
+                            id: el.name,
+                            name: el.name,
+                            prefix: el.dial_code.replace(' ', '') //some codes look like that: +1 868
+                        });
+                    }
+                    setData(loadedCodes);
+                }
+
+            );
+
+
+    }, []);
+
 
     const onSort = column  => {
         const direction = sorting.column ? (sorting.direction === 'asc' ? 'desc' : 'asc') : 'desc';
@@ -47,6 +71,7 @@ const Table = () => {
     };
 
         return (
+            <>
             <TableWrapper>
                 <thead>
                 <tr>
@@ -65,6 +90,7 @@ const Table = () => {
                 })}
                 </tbody>
             </TableWrapper>
+                </>
         );
 }
 
