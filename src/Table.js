@@ -1,21 +1,29 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useReducer} from 'react';
 import { phoneCodes } from './data/phoneCodes';
-
+import { dataReducer} from './reducers/reducers'
+import { sortReducer} from './reducers/reducers'
 import { TableWrapper, TdWrapper, ThWrapper } from "./styled";
 
-
+const INITIAL_SORTING = {
+    column: null,
+    direction: 'desc'
+}
 
 const Table = () => {
 
-    const [data, setData] = useState( []);
+        //const [data, setData] = useState( []);
 
-    const [sorting, setSorting] = useState({
+        /*  const [sorting, setSorting] = useState({
             column: null,
-            direction: 'desc',
+            direction: 'desc'
         });
+        */
+
+    const [myDataState, dispatch] = useReducer(dataReducer, []);
+    const [mySortingState, dispatchSorting] = useReducer(sortReducer, INITIAL_SORTING );
 
     useEffect( ()=>  {
-/*        axios.get('https://country.io/phone.json')
+        /*   axios.get('https://country.io/phone.json')
             .then(res => console.log(res))
             .catch(err => console.log(err));
           //  gives CORS error, can't change to https
@@ -31,18 +39,15 @@ const Table = () => {
                             prefix: el.dial_code.replace(' ', '') //some codes look like that: +1 868
                         });
                     }
-                    setData(loadedCodes);
+                    dispatch({type: 'ADD', payload: loadedCodes});
                 }
-
             );
-
-
     }, []);
 
 
     const onSort = column  => {
-        const direction = sorting.column ? (sorting.direction === 'asc' ? 'desc' : 'asc') : 'desc';
-        const sortedData = data.sort((a, b) => {
+        const direction = mySortingState.column ? (mySortingState.direction === 'asc' ? 'desc' : 'asc') : 'desc';
+        const sortedData = myDataState.sort((a, b) => {
             if (column === 'name') {
                 const nameA = a.name.toUpperCase();
                 const nameB = b.name.toUpperCase();
@@ -63,11 +68,11 @@ const Table = () => {
             sortedData.reverse();
         }
 
-        setData(sortedData);
-        setSorting({
+        dispatch({type: 'ADD', payload:sortedData});
+        dispatchSorting({type: 'SET', payload: {
             column,
             direction,
-        });
+        }})
     };
 
         return (
@@ -80,7 +85,7 @@ const Table = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {data.map(function(item, index) {
+                {myDataState.map(function(item, index) {
                     return (
                         <tr key={index} data-item={item}>
                             <TdWrapper data-title="Name">{item.name}</TdWrapper>
