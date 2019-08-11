@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28498f8c-d222-4b02-9078-2f4baa37edd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Auth.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Card.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/auth-context.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Table2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/reducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +28,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PHYNxIBHBKcTyyhuvqiUh7ODns" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -81,7 +87,7 @@
       <updated>1565191767569</updated>
       <workItem from="1565191769778" duration="14086000" />
       <workItem from="1565254039061" duration="4305000" />
-      <workItem from="1565532455578" duration="2424000" />
+      <workItem from="1565532455578" duration="5526000" />
     </task>
     <servers />
   </component>
