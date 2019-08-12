@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 
 import Card from './UI/Card';
 import './Auth.css';
-import { AuthContext } from '../context/auth-context';
+import {AuthContext} from '../context/auth-context';
+import {NiceButton} from "../styled";
 
 const Auth = props => {
     const myContext = useContext(AuthContext);
@@ -15,7 +16,7 @@ const Auth = props => {
             <Card>
                 <h2>You are not authenticated!</h2>
                 <p>Please log in to continue.</p>
-                <button onClick={loginHandler}>Log In</button>
+                <NiceButton onClick={loginHandler}>Log In</NiceButton>
             </Card>
         </div>
     );

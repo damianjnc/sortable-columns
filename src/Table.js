@@ -1,8 +1,10 @@
-import React, {useEffect, useReducer} from 'react'
+import React, {useEffect, useReducer, useContext} from 'react'
 import {phoneCodes} from './data/phoneCodes'
 import {dataReducer} from './reducers/reducers'
 import {sortReducer} from './reducers/reducers'
-import {TableWrapper, TdWrapper, ThWrapper} from "./styled"
+import {AuthContext} from "./context/auth-context"
+import {TableWrapper, TdWrapper, ThWrapper, NiceButton} from "./styled"
+
 
 const INITIAL_SORTING = {
     column: null,
@@ -11,6 +13,10 @@ const INITIAL_SORTING = {
 
 const Table = () => {
 
+    const authContext = useContext(AuthContext);
+
+    const onLogoutHandler = () => authContext.logout();
+    ;
     //const [data, setData] = useState( []);
 
     /*  const [sorting, setSorting] = useState({
@@ -79,6 +85,7 @@ const Table = () => {
 
     return (
         <>
+            <NiceButton onClick={onLogoutHandler}>Logout</NiceButton>
             <TableWrapper>
                 <thead>
                 <tr>

@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 export const AuthContext = React.createContext({
     isAuth: false,
-    login: () => {}
+    login: () => {
+    }, //for better autocompletion
+    logout: () => {
+    }
 });
 
 const AuthContextProvider = props => {
@@ -10,9 +13,12 @@ const AuthContextProvider = props => {
     const loginHandle = () => {
         setIsAuthenticated(true);
     };
+    const logoutHandle = () => {
+        setIsAuthenticated(false);
+    }
     return (
         <AuthContext.Provider
-            value={{ isAuth: isAuthenticated, login: loginHandle }}
+            value={{isAuth: isAuthenticated, login: loginHandle, logout: logoutHandle}}
         >
             {props.children}
         </AuthContext.Provider>

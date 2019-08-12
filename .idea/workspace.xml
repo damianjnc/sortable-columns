@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28498f8c-d222-4b02-9078-2f4baa37edd3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/auth-context.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/auth-context.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +39,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="settings.saveactions" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -85,6 +86,8 @@
       <workItem from="1565191769778" duration="14086000" />
       <workItem from="1565254039061" duration="4305000" />
       <workItem from="1565532455578" duration="5526000" />
+      <workItem from="1565599144084" duration="1932000" />
+      <workItem from="1565601516610" duration="2410000" />
     </task>
     <servers />
   </component>
