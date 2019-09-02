@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="28498f8c-d222-4b02-9078-2f4baa37edd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/Table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Table2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/reducers.js" afterDir="false" />
+>>>>>>> 8f2b4cc7bbc8c472e8344481c33da549bac43509
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +28,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PHYNxIBHBKcTyyhuvqiUh7ODns" />
+<<<<<<< HEAD
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+=======
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> 8f2b4cc7bbc8c472e8344481c33da549bac43509
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -82,12 +91,16 @@
       <updated>1565191767569</updated>
       <workItem from="1565191769778" duration="14086000" />
       <workItem from="1565254039061" duration="4305000" />
+<<<<<<< HEAD
       <workItem from="1565532455578" duration="5526000" />
       <workItem from="1565599144084" duration="1932000" />
       <workItem from="1565601516610" duration="2779000" />
       <workItem from="1565627213989" duration="844000" />
       <workItem from="1566489742206" duration="19000" />
       <workItem from="1566489795071" duration="790000" />
+=======
+      <workItem from="1565532455578" duration="2424000" />
+>>>>>>> 8f2b4cc7bbc8c472e8344481c33da549bac43509
     </task>
     <servers />
   </component>
@@ -99,9 +112,13 @@
       <map>
         <entry key="MAIN">
           <value>
+<<<<<<< HEAD
             <State>
               <option name="COLUMN_ORDER" />
             </State>
+=======
+            <State />
+>>>>>>> 8f2b4cc7bbc8c472e8344481c33da549bac43509
           </value>
         </entry>
       </map>

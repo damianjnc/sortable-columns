@@ -1,11 +1,11 @@
-import React, {useEffect, useReducer, useContext} from 'react'
-import {phoneCodes} from './data/phoneCodes'
-import {dataReducer} from './reducers/reducers'
-import {sortReducer} from './reducers/reducers'
-import {AuthContext} from "./context/auth-context"
-import {TableWrapper, TdWrapper, ThWrapper, NiceButton} from "./styled"
 
+import React, {useEffect, useReducer} from 'react';
+import { phoneCodes } from './data/phoneCodes';
+import { dataReducer} from './reducers/reducers'
+import { sortReducer} from './reducers/reducers'
+import { TableWrapper, TdWrapper, ThWrapper } from "./styled";
 
+>>>>>>> 8f2b4cc7bbc8c472e8344481c33da549bac43509
 const INITIAL_SORTING = {
     column: null,
     direction: 'desc'
@@ -13,45 +13,41 @@ const INITIAL_SORTING = {
 
 const Table = () => {
 
-    const authContext = useContext(AuthContext);
+        //const [data, setData] = useState( []);
 
-    const onLogoutHandler = () => authContext.logout();
-    ;
-    //const [data, setData] = useState( []);
-
-    /*  const [sorting, setSorting] = useState({
-        column: null,
-        direction: 'desc'
-    });
-    */
+        /*  const [sorting, setSorting] = useState({
+            column: null,
+            direction: 'desc'
+        });
+        */
 
     const [myDataState, dispatch] = useReducer(dataReducer, []);
-    const [mySortingState, dispatchSorting] = useReducer(sortReducer, INITIAL_SORTING);
+    const [mySortingState, dispatchSorting] = useReducer(sortReducer, INITIAL_SORTING );
 
-    useEffect(() => {
+    useEffect( ()=>  {
         /*   axios.get('https://country.io/phone.json')
             .then(res => console.log(res))
             .catch(err => console.log(err));
           //  gives CORS error, can't change to https
             */
 
-        phoneCodes().then(
-            res => {
-                const loadedCodes = [];
-                for (let el of res) {
-                    loadedCodes.push({
-                        id: el.name,
-                        name: el.name,
-                        prefix: el.dial_code.replace(' ', '') //some codes look like that: +1 868
-                    });
+            phoneCodes().then(
+                res =>{
+                    const loadedCodes = [];
+                    for(let el of res){
+                        loadedCodes.push({
+                            id: el.name,
+                            name: el.name,
+                            prefix: el.dial_code.replace(' ', '') //some codes look like that: +1 868
+                        });
+                    }
+                    dispatch({type: 'ADD', payload: loadedCodes});
                 }
-                dispatch({type: 'ADD', payload: loadedCodes});
-            }
-        );
+            );
     }, []);
 
 
-    const onSort = column => {
+    const onSort = column  => {
         const direction = mySortingState.column ? (mySortingState.direction === 'asc' ? 'desc' : 'asc') : 'desc';
         const sortedData = myDataState.sort((a, b) => {
             if (column === 'name') {
@@ -74,13 +70,11 @@ const Table = () => {
             sortedData.reverse();
         }
 
-        dispatch({type: 'ADD', payload: sortedData});
-        dispatchSorting({
-            type: 'SET', payload: {
-                column,
-                direction,
-            }
-        })
+        dispatch({type: 'ADD', payload:sortedData});
+        dispatchSorting({type: 'SET', payload: {
+            column,
+            direction,
+        }})
     };
 
     return (
@@ -94,7 +88,7 @@ const Table = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {myDataState.map(function (item, index) {
+                {myDataState.map(function(item, index) {
                     return (
                         <tr key={index} data-item={item}>
                             <TdWrapper data-title="Name">{item.name}</TdWrapper>
